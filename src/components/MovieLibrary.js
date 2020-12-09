@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import { MovieDetail } from './MovieDetail'
+import { MovieCard } from './MovieCard'
 
 export const MovieLibrary = () => {
   const [movieList, setMovieList] = useState([])
 
   useEffect(() => {
-      const API = 'https://first-api-disney.herokuapp.com/movies'
+      const API = 'https://new-disney-api.herokuapp.com/movies'
       fetch(API)
         .then((response) => response.json())
         .then((json) => {
@@ -21,7 +21,7 @@ export const MovieLibrary = () => {
   <>
     <section className ="movie-list-container">
       {movieList.map((movie) => (
-        <MovieDetail key= {movie.movie_title} movie={movie}/>
+        <MovieCard key= {movie.total_gross} {...movie}/>
       ))}
     </section>
   </>
