@@ -1,9 +1,8 @@
 import React from 'react'
+import { MovieLibrary } from './components/MovieLibrary'
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+   <MovieLibrary /> 
   )
 }
